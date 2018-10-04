@@ -1,0 +1,13 @@
+order of growth
+
+Code-1:	N         
+
+Code-2:	1 
+
+Code-3: syntactical error
+
+Code-4:	N^2
+
+Code-5:	when j=0 it goes to infinite loop,when j=1 then N*log(N)
+
+Code-6:	1
