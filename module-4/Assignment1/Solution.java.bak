@@ -101,7 +101,6 @@ class Solution
 				System.out.println("YES");
 				count++;
 			}
-			System.out.println(s.length());
 			//System.out.println(count);
 			st.Empty();
 		}
