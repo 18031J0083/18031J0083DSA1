@@ -8,7 +8,7 @@ class Solution
 		String str=sc.nextLine();
 		String[] d=str.split(" ");
 		Stack st=new Stack(d.length);
-        int sol=0;
+int sol=0;
 		for(int i=0;i<d.length;i++)
 		{
 			String s=d[i];
@@ -40,7 +40,7 @@ class Solution
 }
 class Stack
 {
-	int top=0;
+	int N=0;
 	int [] s;
 	public Stack(int cap)
 	{
@@ -48,23 +48,23 @@ class Stack
 	}
 	public boolean isEmpty()
 	{
-		return top==0;
+		return N==0;
 	}
 	public void push(int a)
 	{
-		s[top++]=a;
+		s[N++]=a;
 	}
 	public int pop()
 	{
-		int b=s[--top];
+		int b=s[--N];
 		return b;
 	}
 	public boolean isFull()
 	{
-		return top==s.length;
+		return N==s.length;
 	}
 	public int peek()
 	{
-		return s[top];
+		return s[N];
 	}
 }

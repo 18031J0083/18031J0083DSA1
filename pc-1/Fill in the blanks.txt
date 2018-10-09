@@ -1,0 +1,148 @@
+1.0
+2.The example given is
+Playing Cricket - is - a hobby - - of - - mentor - deepak
+In the first step playing is enqueued into the queue.
+In the second step cricket is enqueued into the queue.
+In the third step as queue is FIFO mechanism the first element which is entered into the queue is deleted that means playing is dequeued.
+In the fourth step is enqueued in to the queue.
+In the fifth step Playing is deleted.
+In the sixth step a is enqueued into the queue.
+In the seventh step hobby is enqueued into the queue
+In the eighth step is and a gets deleted.
+In the 9th step of is enqueued into the queue
+In the 10th step of and hobby gets dequeued.
+In the 11th step mentor is enqueued into the queue.
+In the 12th step mentor gets dequeued.
+In the 13th step deepak is enqueued.
+At the end deepak remains in the queue.
+3.b,d,e
+4. 2
+5.class Stack
+{
+	int N=0;
+	char [] s;
+	public Stack(int cap)
+	{
+		s=new char[cap];
+	}
+	public boolean isEmpty()
+	{
+		return N==0;
+	}
+	public void push(char a)
+	{
+		if(!isFull())
+		s[N++]=a;
+	}
+	public char pop()
+	{
+		char b = 0;
+		if(!isEmpty())
+		{
+		 b=s[--N];
+		return b;
+		}
+		return b;
+	}
+	public boolean isFull()
+	{
+		return N==s.length;
+	}
+	public int peek()
+	{
+		return s[N];
+	}
+	public void Empty()
+	{
+		N=0;
+	}
+}
+class Solution
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		String N=sc.nextLine();
+		//Stack st=new Stack(N);
+		char r;
+		int count=0;
+		boolean t=true;
+		while(sc.hasNext())
+		{
+			String s=sc.nextLine();
+			Stack st=new Stack(s.length());
+			for(int i=0;i<s.length();i++)
+			{
+				char c=s.charAt(i);
+				switch(c)
+				{
+				case '{':
+					st.push(c);
+					break;
+				case '[':
+					st.push(c);
+					break;
+				case '(':
+					st.push(c);
+					break;
+				case '}':
+					r=st.pop();
+					t=(r=='{');
+					//System.out.println("case 1  :"+t);
+					break;
+				case ']':
+					r=st.pop();
+					t=(r=='[');
+					//System.out.println("case 2  :"+t);
+					break;
+				case ')':
+					r=st.pop();
+					t=(r=='(');
+					//System.out.println("case 3 :"+t);
+					break;
+				}
+				if(t==false)
+				{
+					break;
+				}
+				
+			}
+			if(t==false)
+			{
+				t=true;
+				System.out.println("NO");
+				count++;
+			}
+			else
+			{
+				System.out.println("YES");
+				count++;
+			}
+			System.out.println(s.length());
+			//System.out.println(count);
+			st.Empty();
+		}
+		/*if(t==true)
+		{
+			System.out.print(true);
+		}
+		else
+		{
+			System.out.print(false);
+		}*/
+		//System.out.println(count);
+	}
+}
+6.N
+7.NLOGN
+8.1
+9.N^2
+10. step-1:  0       1       2       4       4       5       6       7       8       9(union(3,4))
+    step-2:  0       1       2       9       9       5       6       7       8       9(union(4,9))
+    step-3:  0       1       2       9       9       5       6       7       0       9(union(8,0))
+    step-4:  0       1       9       9       9       5       6       7       0       9(union(2,3))
+    step-5:  0       1       9       9       9       6       6       7       0       9(union(5,6))
+    step-6:  0       1       9       9       9       9       9       7       0       9(union(5,9))
+    step-7:  0       1       9       9       9       9       9       9       0       9(union(7,3))
+    step-8:  0       1       0       0       0       0       0       0       0       0(union(4,8))
+    step-9:  1       1       1       1       1       1       1       1       1       1(union(6,1))

@@ -1,0 +1,18 @@
+problem-1
+
+it was           pop-was                 stack-it
+the best         pop-best                stack-it the
+of times         pop-the of times        stack-it
+it was           pop-was                 stack-it it
+the              pop-it the              stack-it
+
+
+problem-2
+1.true
+2.true
+3.false
+4.true
+5.true
+6.true
+7.true
+8.true
