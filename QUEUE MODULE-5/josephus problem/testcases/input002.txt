@@ -1,8 +1,9 @@
-7
-pushLeft 1
-pushRight 2
-size
-pushLeft 3
-popLeft
-popRight
-popLeft
+8
+78 45
+44 6
+15 52
+42 4
+28 15
+6 70
+43 33
+1 67

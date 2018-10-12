@@ -1,15 +1,5 @@
-14
-pushLeft 1
-pushRight 2
-size
-pushLeft 3
-popLeft
-pushRight 4
-popRight
-size
-pushRight 5
-popRight
-pushRight 6
-popRight
-pushLeft 7
-size
+4
+7 2
+3 5
+41 28
+74 71
