@@ -1,88 +1,91 @@
-import java.util.Scanner;
-
-class Node1
-{
-	Object data;
-	Node1 next;
-	Node1(int data)
-	{
-		this.data=data;
-		next=null;
-	}
-}
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 class Queue
 {
-	Node1 head;
-	Node1 tail;
-	boolean isempty()
+	Node first=null;
+	Node last=null;
+	int N=0;
+    class Node
+    {
+    	int item;
+    	Node next;
+    	Node prev; 
+    }
+	public boolean isEmpty()
 	{
-		return head==null;
+		return first==null;
 	}
-	void add(int data)
+    public int size()
+    {
+    	return N;
+    }
+	public void enqueue(int i)
 	{
-		Node1 n=new Node1(data);
-		if(isempty())
-		{
-			head=n;
-			tail=n;
-		}
-		else
-		{
-			tail.next=n;
-			tail=tail.next;
-		}
-				
-	}
-	int remove()
+    Node p = last;
+    last = new Node();
+    last.item = i;
+    last.next = null;
+    if (isEmpty())
+    first = last;
+    else
+    p.next = last;
+    ++N;
+    }
+
+	public int dequeue()
 	{
-		Node1 temp=head;
-		
-		if(isempty())
-		{
-			System.out.println("No elements");
-		}
-		else
-		{
-		head=temp.next;
-		}
-		return (int)temp.data;
+	Node o=new Node();
+	o.item=first.item;
+	first=first.next;
+	if(isEmpty())
+	{
+		last=null;
 	}
-	
+	N--;
+	return o.item;
+	}
 }
 
-
-public class Solution{
-
-	 public static void main(String[] args) {
-		 Scanner sc=new Scanner(System.in); 
-		 int k=sc.nextInt();
-		 int i=0;
-		 while(sc.hasNext())
+public class Solution {
+  public static void main(String args[]) throws IOException
+  {
+	  Queue q=new Queue();
+	  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	  int test,n,m;
+	  test=Integer.parseInt(br.readLine());
+	  while(test>0)
+	  {
+	  //System.out.println("n"+n);
+		  
+	    String s=br.readLine();
+	    String st[]=s.split(" ");
+	     n=Integer.parseInt(st[0]);
+	      m=Integer.parseInt(st[1]);
+      StringBuilder str=new StringBuilder("");
+	  for(int i=0;i<n;i++)
+	  {
+		  q.enqueue(i);
+	  }
+	  int count=0;
+	  while(!q.isEmpty())
+	  {
+		 if(count==m-1)
 		 {
-	        int m = sc.nextInt();
-	        int n= sc.nextInt();
-
-	        // initialize the queue
-	        Queue queue =  new Queue(); 
-	        for (i = 0; i < m; i++)
-	        {
-	            queue.add(i);
-	        }
-
-	      //  while (!queue.isempty()) 
-		for (i = 0; i < m-1; i++)
-	        {
-	            for (int j = 0; j < n-1; j++) 
-	            {
-	                queue.add(queue.remove());
-	            }
-	            System.out.print(queue.remove()+" ");
-	        } 
-	queue.add(queue.remove());
-	        System.out.print(queue.remove());
-	        System.out.println();
-	        k++;
+			 str.append(q.dequeue()+" ");
+			 count=0;
 		 }
-	    }
+		 else
+		 {
+			 q.enqueue(q.dequeue());
+			 count++;
+		 }
+	  }
+	int x=str.length();
+	  String su=str.substring(0,x-1);
+	System.out.println(su);    
+	test--;
+      }
+  }
+  }
 
-}
