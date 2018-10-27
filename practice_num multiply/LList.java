@@ -87,7 +87,6 @@ class LList
 		temp.next=n;
 		}
 		
-		
 	}
 	
 	public void pushnext(int a,int b)
@@ -205,6 +204,4 @@ class LList
 		//System.out.println(count);
 		return count;
 	}
-	
-	
 }
