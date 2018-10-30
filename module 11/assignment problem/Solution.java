@@ -50,7 +50,7 @@ public class Solution {
  String key;
 
   if(high-low>=-1)
-	System.out.println("Insertion sort method invoked...");
+	System.out.println("insertionSort called");
 	   for (i = low+1; i <=high; i++) 
 	   { 
 	       key = arr[i]; 
