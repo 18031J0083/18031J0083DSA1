@@ -1,0 +1,12 @@
+blank-1
+1.null
+2.key
+3.x.next
+4.x.key
+5.first
+
+blank-2
+1.hi
+2.mid
+3.mid
+
